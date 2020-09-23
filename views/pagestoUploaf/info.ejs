@@ -1,0 +1,151 @@
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script type="text/javascript"
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+       
+
+         <link rel="stylesheet"
+         href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+         <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+ integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+ <style>
+   .name{ 
+     font-size : 20px;
+   }
+   body{ 
+     background-color : #4bc0c8;
+   }
+  @media (min-width:992px){
+ .img-thumbnail{ 
+       height:25vw;
+       width:100%;
+       
+ }
+  }
+
+  @media (min-width:768px)and (max-width:992px){ 
+    .img-thumbnail{ 
+       height:30vw;
+       width:100%
+ }
+  }
+    
+  @media (max-width:768px){
+ .img-thumbnail{ 
+
+       width:100%;
+       
+ }
+  }
+
+  .h{ 
+    margin-left:-10%;
+   }
+   /* .userI{ 
+      font-size: 9.6em;
+      margin-left:2%;
+  } */
+  @media (max-width:768px){ 
+    .userI{ 
+      font-size: 9em;
+      margin-left:1%;
+  }
+  }
+  @media (min-width:768px){ 
+    .userI{ 
+      font-size: 9.6em;
+      margin-left:9%;
+  }
+  }
+
+ </style>
+ </head>
+ <body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">MY PORTFOLIO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/users">All users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/addY">Add about yourself</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/addP">Add an Image</a>
+      </li>
+      <%if(!og){%>
+      <li class="nav-item">
+        <a class="nav-link " href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/register">Sign Up</a>
+      </li>
+      <%}else{%>
+        <li class="nav-item">
+            <a class="nav-link " href="/logout">Logout</a>
+          </li>
+    <% } %>
+    </ul>
+    </div>
+  </nav>
+  <br>
+  <!-- navbar -->
+  <div class = "row">
+      <div class = "col-4 col-lg-2">
+          <i class="fas fa-user-astronaut userI"></i> 
+      </div>
+      <div style = "margin-top :0.7%" class = "col-8 col-lg-8">
+        <p><span class = "name">Name</span>       :    <%=p.name%></p>
+        <p><span class = "name">Hobbies</span>     : <%=p.Hobbies%></p>
+        <p><span class="name">Interest</span>    : <%=p.Interest %></p>
+        <p><span class = "name">Achievements</span>:<%=p.Achievements %></p>
+        <% if(nm){ %> 
+          <a href="/edit/<%=p._id%>">
+          <button  class="sub  btn btn-primary">Edit Info</button>
+          </a>
+         <% } %>
+    </div>
+  </div> 
+
+
+  <br/>
+  <br/>
+<!-- photos  -->
+  <h3 class = "text-center h">Photos posted by <%= p.name %></h3>
+  <div class = row>
+    <% p.image.forEach(function(y){ %>
+   <div class = "col-lg-4 col-md-6">
+    <img class = "img-thumbnail" src="<%= y.body %>"/>
+   </div>
+   <% }) %>
+
+  </div>
+
+
+<!-- photos -->
+  
+
+
+
+
+ </body>
+ </html>
+     

@@ -1,0 +1,152 @@
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script type="text/javascript"
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+       
+
+         <link rel="stylesheet"
+         href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+         <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+ integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+ <style>
+
+@media (min-width:992px){ 
+    .form-control{ 
+       width:40%;
+       
+     }
+     .form-control{ 
+         margin-left:25%;
+     }
+  }
+  @media (min-width:576px) and (max-width:992px){ 
+    .form-control{ 
+       width:55%;
+       
+     }
+     .form-control{ 
+         margin-left:25%;
+     }
+  }
+  @media (max-width:576px){ 
+    .form-control{ 
+       width:70%;
+       
+     }
+     .form-control{ 
+         margin-left:14%;
+     }
+  }
+  .sub{ 
+    margin-left:41%;
+  
+  }
+  .lb{ 
+    margin-left:-13%;
+    color : yellow;
+    font-size : 20px;
+  }
+  .h{ 
+    margin-left:-9%;
+   }
+
+   body{
+      background-image:url(https://images.wallpaperscraft.com/image/texture_light_pattern_background_shadow_50366_1280x720.jpg);
+     background-size:1700px 1000px
+      }
+ 
+
+ </style>
+ </head>
+ <body>
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="/">MY PORTFOLIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/users">All users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/addY">Add about yourself</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/addP">Add an Image</a>
+          </li>
+          <%if(!og){%>
+          <li class="nav-item">
+            <a class="nav-link " href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/register">Sign Up</a>
+          </li>
+          <%}else{%>
+            <li class="nav-item">
+                <a class="nav-link " href="/logout">Logout</a>
+              </li>
+        <% } %>
+        </ul>
+        </div>
+      </nav>
+      <br>
+
+
+
+    <!-- navbar -->
+
+    <!-- form -->
+    <h1 class = "text-center h">FILL INFO
+       <% if(toShow){ %>
+         FIRST
+       <% } %>
+      !!</h1>
+ <div class = "container">
+    <form action="/addY" method="POST">
+      <div class="form-row">      
+        <div class="form-group col-12">
+          <p class = "text-center lb">Post any Image You Like</p>
+          <input type="text" class="form-control" name="image" placeholder="imageUrl">
+        </div>
+        <div class="form-group col-12">
+             
+          <p class = "text-center lb">Hobbies</p>
+            <input type="text" class = " form-control" name="hobbies" placeholder="Hobbies">
+          </div>
+          <div class="form-group col-12">
+             
+            <p class = "text-center lb">Interest</p>
+            <input type="text" class = " form-control" name="interest" placeholder="Interest">
+          </div>
+          <div class="form-group col-12">
+             
+            <p class = "text-center lb">Achievements</p>
+            <input type="text" class = " form-control" name="achieve" placeholder="Achievements">
+          </div>
+    </div> 
+    <button type="submit"  class="sub  btn btn-primary">SUBMIT</button>
+    </form>
+    </div>
+    <h3 class = "text-center h"><a style="color:white" href="/">Go Back</a></h3>
+    <% if(iv){  %>
+      <p class = "text-center h">Please fill all the details!!!</p>
+<% } %>
+
+
+ </body>
+ </html>

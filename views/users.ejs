@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script type="text/javascript"
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+       
+
+         <link rel="stylesheet"
+         href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+         <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+ integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+ <style type = "text/css"> 
+  .userI{ 
+      font-size: 9.6em;
+  }
+  a{ 
+      color:black;
+  }
+  body{ 
+    background-image : url(https://media.gettyimages.com/vectors/abstract-design-with-geometric-shapes-trendy-red-gradient-vector-id1189513987?s=2048x2048);
+  }
+ </style>
+
+    </head>
+    <body>
+        <!-- <div class="ui one column stackable center aligned page grid">
+            <div id="se" class="column twelve wide">All Users</div>
+            </div>
+            <% u.forEach(function(x){%>
+            <div class="ui grid">
+            <div id="us" class="column two wide"><i id="sy" class="user circle icon"></i></div>
+            <div id="use" class="column ten wide"><a href="/info/<%=x._id%>" class="ac"><%=x.name%></a></div>
+            </div>
+        <%})%>
+        <div id="la" class="field">
+            <label id="lb" style="font-size:18px" ><a id="st" style="color:white" href="/">Go Back</a></label>
+          </div> -->
+
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">MY PORTFOLIO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/users">All users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/addY">Add about yourself</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/addP">Add an Image</a>
+      </li>
+      <%if(!og){%>
+      <li class="nav-item">
+        <a class="nav-link " href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/register">Sign Up</a>
+      </li>
+      <%}else{%>
+        <li class="nav-item">
+            <a class="nav-link " href="/logout">Logout</a>
+          </li>
+    <% } %>
+    </ul>
+    </div>
+  </nav>
+  <br>
+
+
+
+<!-- navbar -->
+
+<div class = "row">
+    <% u.forEach(function(x){%>
+        <div class = "col-sm-6 col-md-3 col-lg-2">
+            <a href="/info/<%=x._id%>">
+            <div class="text-center">
+            <i class="fas fa-user-astronaut userI"></i>
+            </div>
+            <br/>
+            <br/>
+            <div><p class = "text-center"><%=x.name%></p></div>
+            </a>
+        </div>
+    <%})%>
+
+</div>
+
+
+
+
+
+
+    
+            
+   </body>
+</html>
