@@ -1,3 +1,5 @@
+
+var abcd = "abcd"
 var name = "";
 var nm = false;
 var og =true;
